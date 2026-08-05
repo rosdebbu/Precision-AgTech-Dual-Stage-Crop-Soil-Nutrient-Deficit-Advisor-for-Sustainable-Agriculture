@@ -78,26 +78,26 @@ def predict_crop_for_soil(n, p, k, temp, humidity, ph, rainfall):
 
 def main():
     print("=" * 70)
-    print("🌾 PRECISION AGTECH CROP RECOMMENDATION INFERENCE ENGINE 🌾")
+    print("PRECISION AGTECH CROP RECOMMENDATION INFERENCE ENGINE")
     print("=" * 70)
     
     # Sample Test Scenario 1: Soil parameters for Rice
     print("\n--- TEST SCENARIO 1: High Nitrogen & Heavy Rainfall ---")
     n, p, k, temp, hum, ph, rain = 90, 42, 43, 20.8, 82.0, 6.5, 202.9
-    print(f"Inputs -> N:{n}, P:{p}, K:{k}, Temp:{temp}°C, Humidity:{hum}%, pH:{ph}, Rainfall:{rain}mm")
+    print(f"Inputs -> N:{n}, P:{p}, K:{k}, Temp:{temp}C, Humidity:{hum}%, pH:{ph}, Rainfall:{rain}mm")
     
     crop, conf, proba, classes = predict_crop_for_soil(n, p, k, temp, hum, ph, rain)
-    print(f"👉 Recommended Crop: *** {crop.upper()} ***")
-    print(f"👉 Model Confidence: {conf:.2f}%")
+    print(f"[->] Recommended Crop: *** {crop.upper()} ***")
+    print(f"[->] Model Confidence: {conf:.2f}%")
     
     # Sample Test Scenario 2: Soil parameters for Coffee
     print("\n--- TEST SCENARIO 2: Cool Mountain Temperature & Moderate Rainfall ---")
     n, p, k, temp, hum, ph, rain = 100, 20, 30, 24.0, 60.0, 6.8, 160.0
-    print(f"Inputs -> N:{n}, P:{p}, K:{k}, Temp:{temp}°C, Humidity:{hum}%, pH:{ph}, Rainfall:{rain}mm")
+    print(f"Inputs -> N:{n}, P:{p}, K:{k}, Temp:{temp}C, Humidity:{hum}%, pH:{ph}, Rainfall:{rain}mm")
     
     crop2, conf2, _, _ = predict_crop_for_soil(n, p, k, temp, hum, ph, rain)
-    print(f"👉 Recommended Crop: *** {crop2.upper()} ***")
-    print(f"👉 Model Confidence: {conf2:.2f}%")
+    print(f"[->] Recommended Crop: *** {crop2.upper()} ***")
+    print(f"[->] Model Confidence: {conf2:.2f}%")
     
     print("\n" + "=" * 70)
     print(">>> CROP RECOMMENDATION SYSTEM PREDICTION COMPLETE! <<<")
